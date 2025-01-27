@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title & Description -->
+    <title>Curiosity - QR Code Generator</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta name="robot" content="FOLLOW,INDEX">
+
+    <!-- Favicons -->
+    <link href="/assets/img/all/favicon.png" rel="icon">
+    <link href="/assets/img/all/appleicon.png" rel="apple-touch-icon">
+
+    <!-- Fonts Used -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fjalla+One&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons Used -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="assets/cns/style.css">
+
+    <!-- Main Javascript File -->
+    <script src="assets/cns/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <!-- Heading For The QR Generator Webpage -->
+        <div class="qr-heading">
+            <h1>C</h1>
+            <h2>(Q</h2>
+            <h3>⊂R)IOSITY</h3>
+        </div>
+    </header>
+
+    <main>
+        <!-- QR Generator Webpage Main Conetent & JS -->
+        <div class="qr-main-title">
+            <h2>QR Code Generator</h2>
+        </div>
+
+
+        <div class="qr-card-conatiners">
+            <div class="qr-card-content">
+                <div class="qr-card-bg"
+                    style="background-image: url(assets/img/all/qr-1.gif); background-size: cover;">
+                    <div class="qr-input-box">
+                        <h3>Input</h3>
+                        <input type="text" id="text-input" placeholder="Enter text or link">
+                        <button onclick="generateQRCode()">Generate QR Code</button>
+                        <audio id="audio" src="assets/anv/click.mp3" preload="auto"></audio>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="qr-card-content">
+                <div class="qr-card-bg"
+                    style="background-image: url(assets/img/all/qr-1.gif); background-size: cover;">
+                    <div class="qr-output-box">
+                        <h3>Output</h3>
+                        <div class="qr-output-img" id="qr-code-container" style="display:none;">
+                            <div id="qr-code"></div>
+                        </div>
+                        <button class="centered-button" id="download-btn" style="display:none;"
+                            onclick="downloadQRCode()">Download
+                            QR Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QR Js Lib Needed -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+            <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="qr-footer-container">
+            <div class="dev-credit">
+                <p>Made By Curious ♡</p>
+            </div>
+            <div class="dev-socials">
+                <a href="https://www.instagram.com/curioushiva/" target="_blank"><i class="ri-instagram-fill"></i></a>
+                <a href="https://github.com/curioushiva" target="_blank"><i class="ri-github-fill"></i></a>
+                <a href="https://www.linkedin.com/in/curioushiva/" target="_blank"> <i
+                        class="ri-linkedin-box-fill"></i></a>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Seperate Js For This Webpage -->
+    <script>
+        // QR Genrator Function 
+        var audio = document.getElementById('audio');
+
+        function playAudio() {
+            audio.play();
+        }
+
+        function generateQRCode() {
+            var textInput = document.getElementById('text-input').value;
+            var qrCodeContainer = document.getElementById('qr-code-container');
+            var qrCodeDiv = document.getElementById('qr-code');
+            var downloadBtn = document.getElementById('download-btn');
+
+            if (textInput.trim() === '') {
+                alert('Please enter text or link :]');
+
+                qrCodeContainer.style.display = 'none';
+                downloadBtn.style.display = 'none';
+                return;
+            }
+
+
+            qrCodeDiv.innerHTML = '';
+
+
+            var qrcode = new QRCode(qrCodeDiv, {
+                text: textInput,
+                width: 128,
+                height: 128
+            });
+
+
+            qrCodeContainer.style.display = 'flex';
+            downloadBtn.style.display = 'block';
+
+
+            playAudio();
+        }
+
+        function downloadQRCode() {
+            var qrCodeContainer = document.getElementById('qr-code-container');
+
+
+            html2canvas(qrCodeContainer).then(function (canvas) {
+
+                var link = document.createElement('a');
+                link.download = 'myQR-curiosity.png';
+                link.href = canvas.toDataURL('image/png', 1.0);
+                link.click();
+
+
+                playAudio();
+            });
+        }
+    </script>
+</body>
+
+</html>

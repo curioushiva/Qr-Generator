@@ -1,0 +1,285 @@
+/* ====> CREDIT : CURIOSITY - QR Generator - Developed by SHIVA, also known as @CURIOUSHIVA <==== */
+/* Universal Values */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000000ea;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+/* Universal Values End */
+
+
+
+
+/* ====> QR CODE GENRATOR - HOMEPAGE START <==== */
+/* Header */
+/* Main heading for the webpage */
+.qr-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    gap: 10px;
+
+}
+
+.qr-heading h1 {
+    font-size: 220px;
+    color: #1b6bd4bd;
+    font-family: "Abril Fatface", serif;
+    padding: 0px 0px 0px 20px;
+}
+
+.qr-heading h2 {
+    color: beige;
+    font-size: 35px;
+    letter-spacing: 4px;
+    font-family: "Abril Fatface", serif;
+    position: relative;
+    right: 85px;
+    top: 4px;
+}
+
+.qr-heading h3 {
+    font-size: 35px;
+    color: beige;
+    font-family: "Abril Fatface", serif;
+    position: relative;
+    right: 95px;
+    top: 4px;
+    letter-spacing: 4px;
+}
+
+/* Main heading for the webpage End*/
+/* Header End */
+
+/* Main */
+/* QR Code Genrator input output containers */
+/* heading */
+.qr-main-title {
+    padding: 3.8rem 2rem 0rem 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+}
+
+.qr-main-title h2 {
+    font-size: 35px;
+    font-family: "Fjalla One", sans-serif;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+.qr-main-title h2:before {
+    content: "";
+    position: absolute;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1b6bd4bd;
+    z-index: -1;
+}
+
+ /* main cards */
+.qr-card-conatiners {
+    padding: 2rem 0rem 4rem 0rem;
+    height: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.qr-card-content {
+    height: 100%;
+    width: 390px;
+    padding: 20px;
+    perspective: 1000px;
+}
+
+.qr-card-bg {
+    padding-top: 100px;
+    background-position: center center;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* input */
+.qr-input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.811);
+    border-radius: 0px 0px 10px 10px;
+    padding: 25px 25px 25px 25px;
+
+}
+
+.qr-input-box h3 {
+    color: #fff;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0px 0px 0px 0px;
+    font-family: "Fjalla One", sans-serif;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+.qr-input-box h3:before {
+    content: "";
+    position: absolute;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1b6bd4bd;
+    z-index: -1;
+}
+
+.qr-input-box input {
+    background-color: white;
+    padding: 10px 22px 10px 22px;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.qr-input-box button {
+    background-color: white;
+    padding: 8px 9px 8px 9px;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* output */
+.qr-output-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.811);
+    border-radius: 0px 0px 10px 10px;
+    padding: 25px 25px 25px 25px;
+
+}
+
+.qr-output-box h3 {
+    color: #fff;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0px 0px 0px 0px;
+    font-family: "Fjalla One", sans-serif;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+
+.qr-output-box h3:before {
+    content: "";
+    position: absolute;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1b6bd4bd;
+    z-index: -1;
+}
+
+.qr-output-box .qr-output-img {
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border: 2px solid #333;
+    padding: 10px;
+    width: 200px;
+    margin: auto;
+    background-color: white;
+}
+
+.qr-output-box button {
+    background-color: white;
+    padding: 8px 9px 8px 9px;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+/* QR Code Genrator input output containers end */
+/* Main End */
+
+/* Footer */
+/* Admin credits and socials */
+.qr-footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: "Abril Fatface", serif;
+    padding: 50px 0px 80px 0px;
+}
+
+.dev-credit p {
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    letter-spacing: 3px;
+}
+
+.dev-credit p:before {
+    content: "";
+    position: absolute;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1b6bd4bd;
+    z-index: -1;
+}
+
+.dev-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.dev-socials a {
+    text-decoration: none;
+    color: white;
+    font-size: 37px;
+}
+
+/* Admin credits and socials end */
+/* Footer End */
+/* ===> QR CODE GENRATOR - HOMEPAGE END <=== */
+
+ 
+
+/* ====> CURIOSITY - QR CODE GENRATOR - ENDS HERE <==== */
