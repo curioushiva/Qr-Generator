@@ -10,7 +10,7 @@ It Generate professional QR codes easily from text for seamless connections anyw
 
 ## Web Link
 
-You can access the [QR Generator](https://mycuriosity.netlify.app/qr/) from here 
+You can access the [QR Generator](https://mycuriosity.netlify.app/bmicalculator/) from here 
   \
   \
 (Feel free to explore the code and contribute!)
